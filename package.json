@@ -1,0 +1,33 @@
+{
+  "name": "angular-analytics",
+  "version": "0.1.0",
+  "description": "Multi-tenant angularjs analytics",
+  "main": "src/angular-analytics.js",
+  "scripts": {
+    "test": "gulp test",
+    "dev": "gulp tdd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cesarandreu/angular-analytics"
+  },
+  "author": {
+    "name": "Cesar Andreu",
+    "email": "mail@cesarandreu.com",
+    "url": "http://cesarandreu.com"
+  },
+  "bugs": {
+    "url": "https://github.com/cesarandreu/angular-analytics"
+  },
+  "homepage": "https://github.com/cesarandreu/angular-analytics",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.8.1",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^0.3.0",
+    "karma": "^0.12.16",
+    "karma-jasmine": "0.2.2",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "lodash": "^2.4.1"
+  }
+}
