@@ -1,13 +1,13 @@
 {
-  "name": "angular-analytics",
+  "name": "angular-multi-analytics",
   "version": "0.1.0",
-  "homepage": "https://github.com/cesarandreu/angular-analytics",
+  "homepage": "https://github.com/cesarandreu/angular-multi-analytics",
   "authors": [
     "Cesar Andreu <mail@cesarandreu.com>"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/cesarandreu/angular-analytics.git"
+    "url": "git://github.com/cesarandreu/angular-multi-analytics.git"
   },
   "description": "Multi-tenant angularjs analytics",
   "keywords": [

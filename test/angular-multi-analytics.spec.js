@@ -1,13 +1,13 @@
 'use strict';
 
-describe('angular-analytics', function () {
+describe('angular-multi-analytics', function () {
   var noop = function () {};
   var spies = {};
   var analytics, rootScope, compile, timeout, location, analyticsProvider;
 
   // Instanciate the module
   beforeEach(function () {
-    module('angular-analytics');
+    module('angular-multi-analytics');
   });
 
   describe('Default behavior', function() {

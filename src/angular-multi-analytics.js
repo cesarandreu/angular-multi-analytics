@@ -1,7 +1,7 @@
 (function(angular) {
   'use strict';
 
-  angular.module('angular-analytics', [])
+  angular.module('angular-multi-analytics', [])
 
   .factory('analyticsDebounce', ['$timeout', '$q', function ($timeout, $q) {
     return function (func, wait, immediate) {

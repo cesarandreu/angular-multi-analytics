@@ -1,15 +1,15 @@
 {
-  "name": "angular-analytics",
+  "name": "angular-multi-analytics",
   "version": "0.1.0",
   "description": "Multi-tenant angularjs analytics",
-  "main": "src/angular-analytics.js",
+  "main": "src/angular-multi-analytics.js",
   "scripts": {
     "test": "gulp test",
     "dev": "gulp tdd"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cesarandreu/angular-analytics"
+    "url": "https://github.com/cesarandreu/angular-multi-analytics"
   },
   "author": {
     "name": "Cesar Andreu",
@@ -17,9 +17,9 @@
     "url": "http://cesarandreu.com"
   },
   "bugs": {
-    "url": "https://github.com/cesarandreu/angular-analytics"
+    "url": "https://github.com/cesarandreu/angular-multi-analytics/issues"
   },
-  "homepage": "https://github.com/cesarandreu/angular-analytics",
+  "homepage": "https://github.com/cesarandreu/angular-multi-analytics",
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.8.1",

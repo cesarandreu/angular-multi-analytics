@@ -1,6 +1,6 @@
 'use strict';
 
-describe('angular-analytics.google-analytics', function () {
+describe('angular-multi-analytics.google-analytics', function () {
   var noop = function () {};
   var analytics, timeout;
   var name = 'name';
@@ -17,7 +17,7 @@ describe('angular-analytics.google-analytics', function () {
     window._gaq = [];
     window.ga = noop;
 
-    module('angular-analytics.google-analytics');
+    module('angular-multi-analytics.google-analytics');
     module(function ($analyticsProvider) {
       $analyticsProvider.settings.autoTrackFirstPage = false;
     });

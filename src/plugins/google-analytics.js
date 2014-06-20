@@ -1,7 +1,7 @@
 (function(angular) {
   'use strict';
 
-  angular.module('angular-analytics.google-analytics', ['angular-analytics'])
+  angular.module('angular-multi-analytics.google-analytics', ['angular-multi-analytics'])
   .config(['$analyticsProvider', function ($analyticsProvider) {
 
     $analyticsProvider.registerPageTracker(function (path) {
