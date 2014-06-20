@@ -14,8 +14,13 @@ gulp.task('tdd', function (done) {
   karma.start(require('./karma.conf.js')(), done);
 });
 
-gulp.task('build', function () {
-  return gulp.src('src/*')
+gulp.task('copy', function () {
+  return gulp.src('src/{,*/}*.js')
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('build', ['copy'], function () {
+  return gulp.src('src/{,*/}*.js')
     .pipe(uglify())
     .pipe(rename({
       extname: '.min.js'
