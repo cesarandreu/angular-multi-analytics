@@ -25,7 +25,8 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "test"
+    "test",
+    "src"
   ],
   "dependencies": {
     "angular": "~1.2.18"
