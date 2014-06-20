@@ -127,14 +127,12 @@
         element.tagName.toLowerCase()+':'+(element.type||'')) >= 0;
     }
 
-    // function inferEventType(element) {
-    //   if (isCommand(element)) return 'click';
-    //   return 'click';
-    // }
-
     function inferEventName(element) {
-      if (isCommand(element)) return element.innerText || element.value;
-      return element.id || element.name || element.tagName;
+      if (isCommand(element)) {
+        return element.innerText || element.value;
+      } else {
+        return element.id || element.name || element.tagName;
+      }
     }
 
     function isProperty(name) {
