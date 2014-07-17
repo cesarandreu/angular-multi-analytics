@@ -150,7 +150,7 @@
           var properties = {};
           angular.forEach($attrs.$attr, function(attr, name) {
               if (isProperty(name)) {
-                  properties[name.slice(9).toLowerCase()] = $attrs[name];
+                  properties[name.toLowerCase()] = $attrs[name];
               }
           });
 

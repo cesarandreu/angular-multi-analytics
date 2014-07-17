@@ -167,19 +167,17 @@ describe('angular-multi-analytics', function () {
     });
 
     it('should call all event trackers when a page is tracked', function () {
-      var name = 'foo';
-      var prop = {bar: 'bar'};
-      var obj = {
-        name: name,
-        properties: prop
+      var ev = {
+        event: 'foo',
+        bar: 'bar'
       };
 
-      analytics.trackEvent(name, prop);
+      analytics.trackEvent(ev);
       timeout.flush();
       expect(spies.eventTracker.calls.count()).toEqual(1);
       expect(spies.anotherEventTracker.calls.count()).toEqual(1);
-      expect(spies.eventTracker).toHaveBeenCalledWith(obj);
-      expect(spies.anotherEventTracker).toHaveBeenCalledWith(obj);
+      expect(spies.eventTracker).toHaveBeenCalledWith(ev);
+      expect(spies.anotherEventTracker).toHaveBeenCalledWith(ev);
     });
 
   });
@@ -321,13 +319,11 @@ describe('angular-multi-analytics', function () {
       elem.triggerHandler('click');
       timeout.flush();
 
-      var name = 'DummyEvent';
-      var prop = {category: 'DummyCategory'};
       var obj = {
-        name: name,
-        properties: prop
+        event: 'DummyEvent',
+        category: 'DummyCategory'
       };
-      expect(analytics.trackEvent).toHaveBeenCalledWith(name, prop);
+      expect(analytics.trackEvent).toHaveBeenCalledWith(obj);
       expect(spies.eventTracker).toHaveBeenCalledWith(obj);
       expect(spies.anotherEventTracker).toHaveBeenCalledWith(obj);
 

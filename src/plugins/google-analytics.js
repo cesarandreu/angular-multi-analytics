@@ -15,31 +15,30 @@
 
     $analyticsProvider.registerEventTracker(function (ev) {
       ev = ev || {};
-      ev.properties = ev.properties || {};
 
-      if (ev.properties.value) {
-        ev.properties.value = parseInt(ev.properties.value, 10) || 0;
+      if (ev.value) {
+        ev.value = parseInt(ev.value, 10) || 0;
       }
 
       if (window._gaq) {
         window._gaq.push([
           '_trackEvent',
-          ev.properties.category,
-          ev.name,
-          ev.properties.label,
-          ev.properties.value,
-          !!ev.properties.noninteraction
+          ev.category,
+          ev.event,
+          ev.label,
+          ev.value,
+          !!ev.noninteraction
         ]);
       }
       if (window.ga) {
         window.ga(
           'send',
           'event',
-          ev.properties.category,
-          ev.name,
-          ev.properties.label,
-          ev.properties.value,
-          ev.properties.noninteraction ? {nonInteraction: 1} : undefined
+          ev.category,
+          ev.event,
+          ev.label,
+          ev.value,
+          ev.noninteraction ? {nonInteraction: 1} : undefined
         );
       }
 

@@ -3,8 +3,8 @@
 describe('angular-multi-analytics.google-analytics', function () {
   var noop = function () {};
   var analytics, timeout;
-  var name = 'name';
   var properties = {
+    event: 'event',
     category: 'category',
     label: 'label',
     value: 'value',
@@ -38,7 +38,7 @@ describe('angular-multi-analytics.google-analytics', function () {
       expect(window._gaq[0][1]).toEqual('/foo');
     });
 
-    it('should call ga when a page is tracker', function () {
+    it('should call ga when a page is tracked', function () {
       spyOn(window, 'ga');
       analytics.trackPage('/foo');
       timeout.flush();
@@ -52,12 +52,12 @@ describe('angular-multi-analytics.google-analytics', function () {
 
     it('should add to _gaq when an event is tracked', function () {
       expect(window._gaq.length).toEqual(0);
-      analytics.trackEvent(name, properties);
+      analytics.trackEvent(properties);
       timeout.flush();
       expect(window._gaq.length).toEqual(1);
       expect(window._gaq[0][0]).toEqual('_trackEvent');
       expect(window._gaq[0][1]).toEqual(properties.category);
-      expect(window._gaq[0][2]).toEqual(name);
+      expect(window._gaq[0][2]).toEqual(properties.event);
       expect(window._gaq[0][3]).toEqual(properties.label);
       expect(window._gaq[0][4]).toEqual(0); // value
       expect(window._gaq[0][5]).toEqual(true); // noninteraction
@@ -65,13 +65,13 @@ describe('angular-multi-analytics.google-analytics', function () {
 
     it('should call ga when an event is tracked', function () {
       spyOn(window, 'ga');
-      analytics.trackEvent(name, properties);
+      analytics.trackEvent(properties);
       timeout.flush();
       expect(window.ga).toHaveBeenCalledWith(
         'send',
         'event',
         properties.category,
-        name,
+        properties.event,
         properties.label,
         0,
         {nonInteraction: 1}
