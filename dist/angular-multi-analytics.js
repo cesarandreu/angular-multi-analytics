@@ -80,8 +80,8 @@
           self.cache.pages.push(path);
           consumeCache();
         },
-        trackEvent: function (event, properties) {
-          self.cache.events.push({name: event, properties: properties});
+        trackEvent: function (event) {
+          self.cache.events.push(event);
           consumeCache();
         },
         settings: self.settings
@@ -146,15 +146,16 @@
         var eventType = $attrs.analyticsOn || 'click';
 
         angular.element($element[0]).bind(eventType, function () {
-          var eventName = $attrs.analyticsEvent || inferEventName($element[0]);
-          var properties = {};
+          var properties = {
+            event: $attrs.analyticsEvent || inferEventName($element[0])
+          };
           angular.forEach($attrs.$attr, function(attr, name) {
               if (isProperty(name)) {
-                  properties[name.toLowerCase()] = $attrs[name];
+                  properties[name.slice(9).toLowerCase()] = $attrs[name];
               }
           });
 
-          $analytics.trackEvent(eventName, properties);
+          $analytics.trackEvent(properties);
         });
       }
     };
