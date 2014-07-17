@@ -26,7 +26,11 @@
     "node_modules",
     "bower_components",
     "test",
-    "src"
+    "src",
+    "gulpfile.js",
+    "karma.conf.js",
+    "package.json",
+    "bower.json"
   ],
   "dependencies": {
     "angular": "~1.2.18"
